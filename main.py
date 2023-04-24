@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 import discord
+import os
 import time
 
 options = webdriver.ChromeOptions()
@@ -23,7 +24,7 @@ for jogo in jogosGratis:
 channel_id = 1080950286002167910
 
 # Substitua o token pelo token do seu bot
-token = 'MTA5OTc4Njc0Njk5NDExNDU5MQ.G32YSn.4tXzJLxRqthO71JQ3xYANduKu_am9dhrM5BfUM'
+token = os.getenv("TOKEN")
 
 
 intents = discord.Intents.default()  # habilita as intenções padrão (todas exceto as privadas)
