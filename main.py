@@ -9,7 +9,7 @@ import time
 options = webdriver.ChromeOptions()
 options.add_argument("--start-fullscren")
 options.add_argument("--headless")
-driver = webdriver.Chrome("/home/mtbrito/chromedriver", options=options)
+driver = webdriver.Chrome(options=options)
 driver.get("https://store.epicgames.com/pt-BR")
 jogosGratis = driver.find_elements(By.CLASS_NAME, 'css-5auk98')
 mensagens = []
