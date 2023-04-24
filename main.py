@@ -8,7 +8,16 @@ import time
 
 options = webdriver.ChromeOptions()
 options.add_argument("--start-fullscren")
-options.add_argument("--headless")
+# options.add_argument("--headless")
+options.add_argument("--disable-dev-shm-usage")
+options.add_argument("--no-sandbox")
+options.add_argument("start-maximized")
+options.add_argument("disable-infobars")
+options.add_argument("--disable-extensions")
+options.add_argument("--disable-gpu")
+options.add_argument("--disable-browser-side-navigation")
+options.add_argument("--disable-setuid-sandbox")
+options.add_argument("--disable-features=site-per-process")
 driver = webdriver.Chrome(options=options)
 driver.get("https://store.epicgames.com/pt-BR")
 jogosGratis = driver.find_elements(By.CLASS_NAME, 'css-5auk98')
@@ -19,6 +28,8 @@ for jogo in jogosGratis:
         linkJogo = jogo.find_element(By.CSS_SELECTOR, "a").get_attribute("href")
         mensagem = "Jogo gratuito: "+nomeJogo+"\n"+"Link: "+str(linkJogo)
         mensagens.append(mensagem)
+
+print(mensagens)
 
 # Substitua o ID do canal pelo ID do canal em que você deseja enviar a mensagem
 channel_id = 1080950286002167910
