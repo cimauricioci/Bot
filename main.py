@@ -19,7 +19,7 @@ jogos = []
 notificacoes = []
 
 channel_id = 1071946731358527581
-token = "MTA5OTc4Njc0Njk5NDExNDU5MQ.GNQyFI.WWUF0GhTz-I2oUddzoAWAFR4KzNSmQtEiJybz0"
+token = os.getenv("TOKEN")
 
 # iterar sobre os jogos na resposta da API
 def buscarJogos():
